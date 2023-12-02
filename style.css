@@ -1,0 +1,240 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Roboto, Arial, sans-serif;
+  color: var(--font-color);
+  background-color: var(--background-color);
+}
+:root {
+  --background-color: #0f0f0f;
+  --light-grey: #272727;
+  --font-color: #f0f0f0;
+}
+header {
+  position: sticky;
+  top: 0px;
+}
+nav {
+  height: 3.5rem;
+  width: 100%;
+  background-color: var(--background-color);
+  padding-left: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  cursor: pointer;
+}
+.logo-name {
+  font-weight: 400;
+  margin-left: 3px;
+}
+#search {
+  border: 0.7px solid grey;
+  outline: none;
+  height: 2.4rem;
+  width: 30rem;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  background-color: #121212;
+}
+
+.profile {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+  cursor: pointer;
+  margin-right: 12px;
+}
+::placeholder {
+  padding-left: 10px;
+}
+#serch-icon {
+  height: 2.5rem;
+  width: 4.3rem;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: var(--light-grey);
+  border: 0.7px solid grey;
+  outline: none;
+  margin-left: -11px;
+  cursor: pointer;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+#voice {
+  height: 2.5rem;
+  width: 3rem;
+  border-radius: 50%;
+  background-color: var(--light-grey);
+  outline: none;
+  border: 0.7px solid grey;
+  cursor: pointer;
+}
+
+.left-side-bar {
+  height: 100vh;
+  width: 4.7rem;
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 2rem;
+}
+
+.home,
+.shorts,
+.suscribtion,
+.you {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  border-radius: 5px;
+  width: 4rem;
+  background-color: var(--background-color);
+  cursor: pointer;
+}
+.home:hover,
+.shorts:hover,
+.suscribtion:hover,
+.you:hover {
+  background-color: var(--light-grey);
+}
+#left-logo {
+  font-size: 11px;
+}
+.videos-leftbar {
+  display: flex;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.recommendation-list {
+  background-color: var(--background-color);
+  height: 3rem;
+  width: 100vw;
+  overflow-x: scroll;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  justify-content: space-between;
+  padding-left: 1rem;
+  text-wrap: nowrap;
+}
+.quick-link {
+  background-color: var(--light-grey);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  padding: 9px;
+  border: none;
+
+  border-radius: 10px;
+}
+
+.videos {
+  background-color: var(--background-color);
+  height: 100vh;
+  padding-left: 20px;
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.video-list {
+  height: 350px;
+  width: 400px;
+  background-color: var(--background-color);
+  border-radius: 30px;
+}
+.videoPreview {
+  background-color: rgb(238, 68, 68);
+  height: 230px;
+  border-radius: 20px;
+}
+.channel {
+  height: 3rem;
+  width: 3rem;
+  background-color: aqua;
+  border-radius: 50%;
+}
+.logo_description {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  padding-left: 1rem;
+}
+.channel {
+  margin-top: 1rem;
+}
+.description > p {
+  text-wrap: wrap;
+}
+.description {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  gap: 7px;
+}
+
+.views {
+  display: flex;
+}
+
+#video-views,
+#video-year,
+#video-channel-name {
+  color: #8da3a0;
+}
+
+@media screen and (max-width: 950px) {
+  #search {
+    width: 15rem;
+  }
+}
+@media screen and (max-width: 660px) {
+  #search {
+    display: none;
+  }
+  #voice {
+    background-color: var(--background-color);
+    border: none;
+  }
+  #serch-icon {
+    border: none;
+    background-color: var(--background-color);
+  }
+  .search-bar {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .left-side-bar {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 428px) {
+  .bell {
+    display: none;
+  }
+  .voice-icon {
+    display: none;
+  }
+}
