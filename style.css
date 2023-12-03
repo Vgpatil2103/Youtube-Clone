@@ -4,6 +4,7 @@
   font-family: Roboto, Arial, sans-serif;
   color: var(--font-color);
   background-color: var(--background-color);
+  box-sizing: border-box;
 }
 :root {
   --background-color: #0f0f0f;
@@ -150,27 +151,25 @@ nav {
 .videos {
   background-color: var(--background-color);
   height: 100vh;
-  padding-left: 20px;
+  padding-left: 5px;
   padding-top: 20px;
   display: flex;
+  gap:30px;
   flex-wrap: wrap;
-  gap: 50px;
+  
 }
 
 .video-list {
-  height: 350px;
-  width: 400px;
+  display: flex;
+  flex-direction: column;
   background-color: var(--background-color);
   border-radius: 30px;
 }
-.videoPreview {
-  background-color: rgb(238, 68, 68);
-  height: 230px;
-  border-radius: 20px;
-}
+#thumbnail{width: 350px; height: 200px;}
+
 .channel {
   height: 3rem;
-  width: 3rem;
+  width: 4rem;
   background-color: aqua;
   border-radius: 50%;
 }
@@ -180,6 +179,9 @@ nav {
   gap: 10px;
   padding-left: 1rem;
 }
+#channel-logo{border-radius: 50%; height: 3rem;
+  width: 4rem;}
+.description{width: 300px;}
 .channel {
   margin-top: 1rem;
 }
