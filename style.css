@@ -245,4 +245,7 @@ nav {
   .voice-icon {
     display: none;
   }
+  .videos{
+    align-items: center;
+  }
 }

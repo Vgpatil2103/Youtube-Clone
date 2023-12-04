@@ -3,7 +3,7 @@
 let API_KEY = "AIzaSyBb3PAC6R8XJwh3_UrYwwG8YPLevueEr88";
 
 async function popular() {
-    const BASE_URL = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&part=snippet&maxResults=20`;
+    const BASE_URL = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&part=snippet&maxResults=20&q=Bollywood+songs`;
     const response = await fetch(BASE_URL);
     const data = await response.json();
     console.log(data.items);
@@ -27,14 +27,16 @@ function append(data,channelDetails) {
     let container = document.createElement("div");
     container.className = "videos";
 
-    data.forEach(({ snippet, id: { videoId } },index) => {
+    data.forEach(({ snippet,videoId },index) => {
         let img = snippet.thumbnails.high.url;
         let title = snippet.title;
         let channelTitle = snippet.channelTitle;
         let channelLogo = channelDetails[index].thumbnails.default.url;
         let videoElement = document.createElement("div");
         videoElement.classList.add("video-list");
-
+        videoElement.addEventListener("click", () => {
+            playVideo(videoId);
+        });
         videoElement.innerHTML = `
             <div class="videoPreview">
                 <img id="thumbnail" src="${img}">
@@ -103,6 +105,10 @@ function searchAppend(data,channelDetails){
         let channelLogo = channelDetails[index].thumbnails.default.url;
         let videoElement = document.createElement("div");
         videoElement.classList.add("video-list");
+
+        videoElement.addEventListener("click", () => {
+            playVideo(videoId);
+        });
 
         videoElement.innerHTML = `
             <div class="videoPreview">
@@ -179,7 +185,7 @@ function searchqlinkAppend(data, channelDetails) {
         videoElement.addEventListener("click", () => {
             playVideo(videoId);
         });
-        
+
         videoElement.innerHTML = `
             <div class="videoPreview">
                 <img id="thumbnail" src="${img}">
@@ -221,7 +227,7 @@ document.querySelectorAll(".quick-link").forEach(button => {
 
 function playVideo(videoId) {
     const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
-    window.open(youtubeUrl, '_blank');
+    window.location.href = youtubeUrl;
 }
 
 //left menu bar
